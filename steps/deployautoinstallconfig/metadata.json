@@ -1,0 +1,47 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "autoinstallconfig", 
+    "deployPath": "{automationWorkerBaseDir}/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "6bd561d4-229d-4103-86bc-d86c8debad4f", 
+    "key": "deployautoinstallconfig", 
+    "makoFileNames": [
+        "autoinstall.yaml"
+    ], 
+    "makoParameters": [
+        {
+            "name": "hostname", 
+            "parameterKey": "newosnode", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "username", 
+            "parameterKey": "newosuserhashedpassword", 
+            "parameterType": "c.s.s.b.phv.OsCred"
+        }, 
+        {
+            "name": "hashedPassword", 
+            "parameterKey": "newosuserhashedpassword", 
+            "parameterType": "c.s.s.b.phv.OsCred"
+        }, 
+        {
+            "name": "gateway", 
+            "parameterKey": "newosgateway", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "dns1", 
+            "parameterKey": "newosdns1", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "dns2", 
+            "parameterKey": "newosdns2", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }
+    ], 
+    "name": "Deploy autoinstall Config", 
+    "osCredKey": "automationworkeruser", 
+    "serverKey": "automationworkernode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}

@@ -1,0 +1,33 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "823fde97-88b5-4251-9369-24b154d3b59d", 
+    "isBlueprint": true, 
+    "key": "createubuntuautoinstalliso", 
+    "links": [
+        {
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "stepKey": "deployubuntuserver22042iso"
+        }, 
+        {
+            "stepKey": "extractiso"
+        }, 
+        {
+            "stepKey": "deployautoinstallconfig"
+        }, 
+        {
+            "stepKey": "deploygrubbootconfig"
+        }, 
+        {
+            "stepKey": "createiso"
+        }, 
+        {
+            "stepKey": "deletebuilddirectory"
+        }
+    ], 
+    "name": "Create Ubuntu Auto Install ISO", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

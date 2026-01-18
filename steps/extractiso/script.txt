@@ -1,0 +1,14 @@
+cd {automationWorkerBaseDir}/build-{newOsNode.fqn}
+
+if ls | grep -q ubuntu*iso
+then
+    
+    ISO="$(echo ubuntu*iso)"
+    echo "ISO is $ISO"
+    
+    7z x "${ISO}"
+    
+    rm -v "${ISO}"
+else
+    echo "ISO is already extracted."
+fi

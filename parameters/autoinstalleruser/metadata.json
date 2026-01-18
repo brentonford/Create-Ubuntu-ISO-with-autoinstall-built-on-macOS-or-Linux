@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "f76fbcbd-0b09-44c5-ab19-27b9f8464d64", 
-    "key": "autoinstalleruser", 
-    "name": "Auto Installer User", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.LinOsCred"
-}

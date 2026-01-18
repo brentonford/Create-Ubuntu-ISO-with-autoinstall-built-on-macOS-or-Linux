@@ -1,0 +1,6 @@
+{
+    "externalUuid4": "1040f2e7-e772-4bb9-bdc1-fb5d8a8d3c3d", 
+    "key": "bootconfig", 
+    "name": "boot config", 
+    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
+}

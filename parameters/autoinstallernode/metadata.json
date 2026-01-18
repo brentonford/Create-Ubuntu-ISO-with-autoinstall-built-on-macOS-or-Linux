@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "c6d617ba-70c8-40c6-8fe1-7fdd3c476ad8", 
-    "key": "autoinstallernode", 
-    "name": "Auto Installer Node", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.LinuxServer"
-}

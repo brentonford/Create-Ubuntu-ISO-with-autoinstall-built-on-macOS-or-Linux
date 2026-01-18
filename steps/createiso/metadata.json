@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "20098f29-ec50-4bc2-9336-64f8256f2e9d", 
+    "externalUuid4": "006c411e-ef26-42b3-b095-d95a3842f65a", 
     "interpreter": 1, 
-    "key": "deletebuilddirectory", 
-    "name": "Delete Build Directory", 
+    "key": "createiso", 
+    "name": "Create ISO", 
     "osCredKey": "automationworkeruser", 
     "serverKey": "automationworkernode", 
     "successExitCode": 0, 

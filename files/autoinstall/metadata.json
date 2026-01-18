@@ -1,6 +1,0 @@
-{
-    "externalUuid4": "98c19ab6-b7e1-4827-9e6a-355ac67a081a", 
-    "key": "autoinstall", 
-    "name": "autoinstall", 
-    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
-}
