@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "5331fd34-12e8-4a2e-b2cd-e3500083513e", 
-    "key": "autoinstallerbasedir", 
-    "name": "Auto Installer Base Dir", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.Text"
-}

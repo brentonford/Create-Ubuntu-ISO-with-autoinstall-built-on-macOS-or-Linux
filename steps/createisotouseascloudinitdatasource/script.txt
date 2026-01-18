@@ -1,6 +1,0 @@
-cd {autoInstallerBaseDir}/build-{autoInstallerNode.fqn}/cidata
-wget -O cloud-localds https://github.com/canonical/cloud-utils/raw/main/bin/cloud-localds
-sed -i 's/genisoimage/mkisofs/g' cloud-localds
-chmod +x cloud-localds
-./cloud-localds {autoInstallerBaseDir}/seed.img user-data meta-data
-rm -rf cloud-localds

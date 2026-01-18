@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "0bc905ad-955c-4378-ba9b-b5b9306feab8", 
+    "key": "newosdns2", 
+    "name": "New OS DNS 2", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Server"
+}

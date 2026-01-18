@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "c8388f40-ea53-4fd3-93f8-81828a43da0b", 
+    "key": "newosgateway", 
+    "name": "New OS Gateway", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Server"
+}

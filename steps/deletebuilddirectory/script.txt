@@ -1,4 +1,4 @@
-DIR="{autoInstallerBaseDir}/build-{autoInstallerNode.fqn}"
+DIR="{automationWorkerBaseDir}/build-{newOsNode.fqn}"
 if [ -d "${DIR}" ]
 then
     rm -rf "${DIR}" && echo "Removed ${DIR}"

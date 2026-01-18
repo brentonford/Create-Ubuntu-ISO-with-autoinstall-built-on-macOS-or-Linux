@@ -1,12 +1,12 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "enabled": true, 
     "externalUuid4": "ede77ea1-be2b-4dde-878d-e2e76bca58c5", 
     "interpreter": 1, 
     "key": "cleanbuildfiles", 
     "name": "Clean Build Files", 
-    "osCredKey": "autoinstallerworkeruser", 
-    "serverKey": "autoinstallerworkernode", 
+    "osCredKey": "automationworkeruser", 
+    "serverKey": "automationworkernode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }
