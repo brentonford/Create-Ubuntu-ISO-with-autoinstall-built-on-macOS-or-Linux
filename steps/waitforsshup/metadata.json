@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "4274e3fe-88aa-4143-970d-a1e8aa43033f", 
+    "key": "waitforsshup", 
+    "minDowntime": 2, 
+    "name": "Wait for ssh up", 
+    "postWait": 0, 
+    "preWait": 0, 
+    "serverKey": "newosnode", 
+    "tcpPort": 80, 
+    "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
+}

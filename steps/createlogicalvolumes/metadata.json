@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "c4becd63-3a3a-4e70-95e8-9a29301139ba", 
+    "interpreter": 1, 
+    "key": "createlogicalvolumes", 
+    "name": "Create Logical Volumes", 
+    "osCredKey": "newosuserroot", 
+    "serverKey": "newosnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

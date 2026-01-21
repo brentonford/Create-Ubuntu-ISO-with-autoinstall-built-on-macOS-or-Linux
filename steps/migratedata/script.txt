@@ -1,0 +1,13 @@
+echo "Copying data from /var..."
+cp -ax /var/* /mnt/newvar/
+
+echo "Copying data from /tmp..."
+cp -ax /tmp/* /mnt/newtmp/
+
+echo "Copying data from /home..."
+cp -ax /home/* /mnt/newhome/
+
+echo "Unmounting new volumes..."
+umount /mnt/newvar
+umount /mnt/newtmp
+umount /mnt/newhome

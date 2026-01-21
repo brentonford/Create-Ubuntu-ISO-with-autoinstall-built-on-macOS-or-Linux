@@ -1,0 +1,2 @@
+echo "Verifying mounts..."
+df -h | grep -E "(var|tmp|home)"

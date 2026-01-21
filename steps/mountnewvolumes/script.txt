@@ -1,0 +1,27 @@
+vgName=$(vgs --noheadings -o vg_name | tr -d ' ')
+
+if [[ -z "$vgName" ]]
+then
+    echo "No volume group found"
+    exit 1
+fi
+
+echo "Using volume group: $vgName"
+
+echo "Backing up original directories..."
+mv /var /var.old
+mv /tmp /tmp.old
+mv /home /home.old
+
+echo "Creating new mount points..."
+mkdir /var /tmp /home
+
+echo "Updating /etc/fstab..."
+echo "/dev/$vgName/var  /var  ext4  defaults  0  2" >> /etc/fstab
+echo "/dev/$vgName/tmp  /tmp  ext4  defaults,noexec,nosuid,nodev  0  2" >> /etc/fstab
+echo "/dev/$vgName/home /home ext4  defaults  0  2" >> /etc/fstab
+
+echo "Mounting new volumes..."
+mount /var
+mount /tmp
+mount /home

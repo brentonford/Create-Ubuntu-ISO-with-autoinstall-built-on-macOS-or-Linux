@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "ceb3e857-7987-461c-8b45-bd7ea623ed6a", 
+    "interpreter": 1, 
+    "key": "removeoldvolumes", 
+    "name": "Remove Old Volumes", 
+    "osCredKey": "newosuserroot", 
+    "serverKey": "newosnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

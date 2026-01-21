@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "11f33206-36f7-4dea-a9da-1fd844965972", 
+    "interpreter": 1, 
+    "key": "verifynewvolumes", 
+    "name": "Verify New Volumes", 
+    "osCredKey": "newosuserroot", 
+    "serverKey": "newosnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

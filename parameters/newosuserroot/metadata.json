@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "6f6b7b7b-eb28-40bd-8dfa-d4e33d36e655", 
+    "key": "newosuserroot", 
+    "name": "New OS User: root", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinOsCred"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "62aeaff8-ab86-43e7-9ec1-66b16f8af098", 
+    "interpreter": 1, 
+    "key": "migratedata", 
+    "name": "Migrate Data", 
+    "osCredKey": "newosuserroot", 
+    "serverKey": "newosnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

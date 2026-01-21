@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "89647a9a-6a89-4621-95ed-2debfc17a88c", 
+    "key": "newoslvtmpsize", 
+    "name": "New OS LV tmp size", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

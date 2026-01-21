@@ -1,0 +1,36 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "92be752f-9bfc-4b57-8a41-695fba7e6d33", 
+    "isBlueprint": true, 
+    "key": "configureseparatelvmpartitions", 
+    "links": [
+        {
+            "stepKey": "createlogicalvolumes"
+        }, 
+        {
+            "stepKey": "migratedata"
+        }, 
+        {
+            "stepKey": "mountnewvolumes"
+        }, 
+        {
+            "stepKey": "verifynewvolumes"
+        }, 
+        {
+            "stepKey": "removeoldvolumes"
+        }, 
+        {
+            "stepKey": "reboot"
+        }, 
+        {
+            "stepKey": "waitforsshup"
+        }, 
+        {
+            "stepKey": "verifynewvolumes"
+        }
+    ], 
+    "name": "Configure Separate LVM Partitions", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

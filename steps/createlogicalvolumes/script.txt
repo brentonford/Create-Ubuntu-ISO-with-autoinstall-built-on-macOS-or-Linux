@@ -1,0 +1,42 @@
+vgName=$(vgs --noheadings -o vg_name | tr -d ' ')
+
+if [[ -z "$vgName" ]]
+then
+    echo "No volume group found"
+    exit 1
+fi
+
+echo "Using volume group: $vgName"
+
+vgFree=$(vgs --noheadings --units g -o vg_free "$vgName" | tr -d 'Gg ' | cut -d. -f1)
+
+sizes=("{newOsLvVarSize}" "{newOsLvTmpSize}" "{newOsLvHomeSize}")
+vgRequired=0
+for size in "${sizes[@]}"
+do 
+    vgRequired=$((vgRequired + ${size%G}))
+done
+
+if [[ $vgFree -lt $vgRequired ]]
+then
+    echo "Insufficient free space in volume group: ${vgFree}G available"
+    exit 1
+fi
+
+echo "Creating logical volumes..."
+lvcreate -L {newOsLvVarSize} -n var "$vgName"
+lvcreate -L {newOsLvTmpSize} -n tmp "$vgName"
+lvcreate -L {newOsLvHomeSize} -n home "$vgName"
+
+echo "Formatting logical volumes..."
+mkfs.ext4 "/dev/$vgName/var"
+mkfs.ext4 "/dev/$vgName/tmp"
+mkfs.ext4 "/dev/$vgName/home"
+
+echo "Creating temporary mount points..."
+mkdir -p /mnt/newvar /mnt/newtmp /mnt/newhome
+
+echo "Mounting new volumes..."
+mount "/dev/$vgName/var" /mnt/newvar
+mount "/dev/$vgName/tmp" /mnt/newtmp
+mount "/dev/$vgName/home" /mnt/newhome

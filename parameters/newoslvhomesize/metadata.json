@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "f5ac7bd3-135e-4c02-bde4-9295a69768bc", 
+    "key": "newoslvhomesize", 
+    "name": "New OS LV home size", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}
