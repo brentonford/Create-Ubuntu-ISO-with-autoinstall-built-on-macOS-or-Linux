@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "735d7c85-7dbb-4569-b314-94a95b11500b", 
+    "interpreter": 1, 
+    "key": "extendinglvmpartitions", 
+    "name": "Extending LVM Partitions", 
+    "osCredKey": "newosuserroot", 
+    "serverKey": "newosnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

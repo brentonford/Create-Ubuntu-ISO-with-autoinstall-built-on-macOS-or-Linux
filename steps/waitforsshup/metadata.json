@@ -8,6 +8,6 @@
     "postWait": 0, 
     "preWait": 0, 
     "serverKey": "newosnode", 
-    "tcpPort": 80, 
+    "tcpPort": 22, 
     "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
 }

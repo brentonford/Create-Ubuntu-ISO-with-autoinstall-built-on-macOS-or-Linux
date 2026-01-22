@@ -16,7 +16,7 @@
             "stepKey": "mountnewvolumes"
         }, 
         {
-            "stepKey": "verifynewvolumes"
+            "stepKey": "verifylvmpartitions"
         }, 
         {
             "stepKey": "removeoldvolumes"
@@ -28,7 +28,7 @@
             "stepKey": "waitforsshup"
         }, 
         {
-            "stepKey": "verifynewvolumes"
+            "stepKey": "verifylvmpartitions"
         }
     ], 
     "name": "Configure Separate LVM Partitions", 

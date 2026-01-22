@@ -1,0 +1,62 @@
+varSize={newOsLvVarSize}
+tmpSize={newOsLvTmpSize}
+homeSize={newOsLvHomeSize}
+
+vgName=$(vgs --noheadings -o vg_name | tr -d ' ')
+
+if [[ -z "$vgName" ]]; then
+    echo "No volume group found"
+    exit 1
+fi
+
+vgFree=$(vgs --noheadings --units g -o vg_free "$vgName" | awk '{print int($1)}')
+echo "Volume group: $vgName"
+echo "Free space available: ${vgFree}G"
+echo ""
+
+extendLv() {
+    local lvName=$1
+    local sizeToAdd=$2
+    
+    if [[ "$sizeToAdd" == "0" ]]; then
+        echo "Skipping $lvName (size: 0)"
+        return
+    fi
+    
+    local lvPath="/dev/$vgName/$lvName"
+    
+    if [[ ! -e "$lvPath" ]]; then
+        echo "Logical volume $lvPath does not exist, skipping"
+        return
+    fi
+    
+    echo "=== Extending $lvName by $sizeToAdd ==="
+    echo "Current size:"
+    lvs --noheadings --units g -o lv_size "$lvPath"
+    
+    lvextend -L "$sizeToAdd" "$lvPath"
+    
+    local fsType=$(blkid -o value -s TYPE "$lvPath")
+    
+    echo "Resizing filesystem (type: $fsType)..."
+    if [[ "$fsType" == "ext4" ]] || [[ "$fsType" == "ext3" ]] || [[ "$fsType" == "ext2" ]]; then
+        resize2fs "$lvPath"
+    elif [[ "$fsType" == "xfs" ]]; then
+        local mountPoint=$(df --output=target "$lvPath" | tail -n1)
+        xfs_growfs "$mountPoint"
+    else
+        echo "Unsupported filesystem type: $fsType"
+        return
+    fi
+    
+    echo "New size:"
+    lvs --noheadings --units g -o lv_size "$lvPath"
+    echo ""
+}
+
+extendLv "var" "$varSize"
+extendLv "tmp" "$tmpSize"
+extendLv "home" "$homeSize"
+
+echo ""
+echo "Extension complete!"

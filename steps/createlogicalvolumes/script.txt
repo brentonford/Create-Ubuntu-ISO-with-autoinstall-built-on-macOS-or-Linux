@@ -8,9 +8,9 @@ fi
 
 echo "Using volume group: $vgName"
 
-vgFree=$(vgs --noheadings --units g -o vg_free "$vgName" | tr -d 'Gg ' | cut -d. -f1)
+vgFree=$(vgs --noheadings --units g -o vg_free "$vgName" | awk '{print int($1)}')
 
-sizes=("{newOsLvVarSize}" "{newOsLvTmpSize}" "{newOsLvHomeSize}")
+sizes=("1G" "1G" "1G")
 vgRequired=0
 for size in "${sizes[@]}"
 do 
@@ -19,14 +19,16 @@ done
 
 if [[ $vgFree -lt $vgRequired ]]
 then
-    echo "Insufficient free space in volume group: ${vgFree}G available"
+    echo "Insufficient free space in volume group: ${vgFree}G available, reqruies ${vgRequired}G"
     exit 1
 fi
 
+echo "Free space in volume group: ${vgFree}G available, reqruies ${vgRequired}G"
+
 echo "Creating logical volumes..."
-lvcreate -L {newOsLvVarSize} -n var "$vgName"
-lvcreate -L {newOsLvTmpSize} -n tmp "$vgName"
-lvcreate -L {newOsLvHomeSize} -n home "$vgName"
+lvcreate -L 1G -n var "$vgName"
+lvcreate -L 1G -n tmp "$vgName"
+lvcreate -L 1G -n home "$vgName"
 
 echo "Formatting logical volumes..."
 mkfs.ext4 "/dev/$vgName/var"
